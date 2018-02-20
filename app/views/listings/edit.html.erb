@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit List</title>
+</head>
+<body>
+
+	<%= form_for @listing do |t| %>
+  	Title: <%= t.text_field :title %><br />
+  	Description : <%= t.text_field :description %><br />
+  	Location : <%= t.text_field :location %><br />
+  	<%= t.submit %>
+<% end %>
+	<%= link_to "Go Back", root_path, class:"btn btn-danger"%>
+</body>
+
+</html>

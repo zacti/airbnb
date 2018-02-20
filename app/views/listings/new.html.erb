@@ -1,0 +1,12 @@
+<%= form_for @listing do |f| %>
+  Title: <%= f.text_field :title %><br />
+  Description : <%= f.text_field :description %><br />
+  Location : <%= f.text_field :location %><br />
+  <div><%#= f.label :kitchen %></div>
+  <div><%#= check_box :listings, :kitchen,%></div>
+    <div><%#=f.label :amenities%></div>
+  <%= f.submit %>
+  <input type="date" name="duedate">
+<% end %>
+
+<%= link_to "Go Back", root_path, class:"btn btn-danger"%>

@@ -1,0 +1,34 @@
+// Place all the styles related to the Create_Listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+	font-family: monospace;	
+	color: black;
+	}
+
+img {
+	float: right;
+}
+
+div#signoutbutton{
+	float: right;
+}
+
+div#first {
+	background-size: auto;
+	display: inline-block;
+}
+div.sign-in {
+	border-style: none;
+	text-align: center;
+	background-color: lightgrey;
+	color: white;
+    text-shadow: 2px 2px 4px #000000;
+	font-family: monospace;
+	background-size: auto;
+	box-shadow: 5px 5px;
+	padding: 15px 15px;
+}
+

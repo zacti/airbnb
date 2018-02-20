@@ -1,0 +1,31 @@
+
+
+<title>Airbnb</title>
+<head>
+
+
+</head>
+
+
+<body>
+	<div id="first">
+	<h1>Listings in Airbnb</h1>
+	<p>
+	Discover entire homes and private rooms perfect for any trip.
+	</p>
+
+	<%= link_to "Create", new_listing_path, class:"btn btn-primary"%>
+
+	<div>
+	<%@listall.each do |listing| %>
+		<h1><%=listing.title%><br></h1>
+		<%=listing.description%><br>
+		<%=listing.location%><br>
+		<%= link_to 'Delete', listing_path(listing), method: :delete,data: { confirm: 'Press OK and get lost!' }, class:"btn btn-danger"%>
+		<%= link_to "Edit", edit_listing_path(listing) ,class:"btn btn-secondary"%><br>
+	<%end%>
+	</div>	
+	
+</div>
+</body>
+
