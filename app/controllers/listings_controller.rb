@@ -1,25 +1,30 @@
 class ListingsController < ApplicationController
 	def index
-		@listall = Listing.all
+		@listall = Listing.order(:title).page params[:page]
+	
 
 	end
 
 	def create
-		@list = Listing.new(listing_params)
-		@list.save
-		redirect_to root_path
+		@list = current_user.listings.new(listing_params)
+		if @list.save
+			redirect_to root_path
+		else
+			redirect_to new_listing_path
+		end
+
 	end
 
 	def new
 		@listing = Listing.new
 	end
 
+
 	def show
 	end
 
 	def edit
-		@listing = Listing.find(params[:id])
-
+		@listing = current_user.listings.find(params[:id])
 	end
 	
 	def update
@@ -37,7 +42,7 @@ class ListingsController < ApplicationController
 	private
 
     def listing_params
-      params.require(:listing).permit(:title, :description, :location)
+      params.require(:listing).permit(:title, :description, :location, :image,:amenities => [])
     end
 
 

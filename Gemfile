@@ -59,3 +59,19 @@ gem 'bootstrap'
 gem 'omniauth'
 
 gem 'omniauth-facebook'
+
+gem 'paperclip'
+
+gem 'pry-rails', :group => :development
+
+gem 'carrierwave', '~> 1.0'
+
+gem 'country_select'
+
+gem 'figaro'
+
+gem 'braintree'
+
+gem 'kaminari'
+
+gem "letter_opener", :group => :development

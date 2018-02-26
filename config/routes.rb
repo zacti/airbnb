@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
 
+
+
+  get 'braintree/new'
+  post 'braintree/checkout'
   root "listings#index"
-  resources :listings
+  resources :listings do
+    resources :reservations
+  end
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
-
   resources :users, controller: "clearance/users", only: [:create] do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
   end
-   get '/auth/:provider/callback' => 'sessions#create'
+  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
 get '/signout' => 'sessions#destroy', :as => :signout
 

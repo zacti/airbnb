@@ -4,14 +4,21 @@
 	<title>Edit List</title>
 </head>
 <body>
-
+<div id="editfirst">
 	<%= form_for @listing do |t| %>
-  	Title: <%= t.text_field :title %><br />
+  	City: <%= t.text_field :title %><br />
   	Description : <%= t.text_field :description %><br />
-  	Location : <%= t.text_field :location %><br />
+  	Price : <%= t.text_field :location %><br />
+  	<div><%= t.label :amenities %></div>
+  	<div><%= t.check_box :amenities, {:multiple => true}, 'kitchen', nil%> Kitchen</div>
+  	<div><%= t.check_box :amenities, {:multiple => true}, 'pool', nil%> Pool</div>
+  	<div><%= t.check_box :amenities, {:multiple => true}, 'gym', nil%> Gym</div>
+  	<div><%= t.check_box :amenities, {:multiple => true}, 'balcony', nil%> Balcony</div>
+  	 <%= t.file_field :image %>
   	<%= t.submit %>
 <% end %>
 	<%= link_to "Go Back", root_path, class:"btn btn-danger"%>
+</div>
 </body>
 
 </html>

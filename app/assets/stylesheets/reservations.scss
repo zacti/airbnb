@@ -1,0 +1,44 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.datesubmit {
+	font-size: 15px;
+	background-color: #ff5a5e;
+ 	padding: 150px 150px;
+	
+}
+
+div#topdescript {
+	text-align: center;
+	font-size: 30px;
+	font-family: Arial;
+	text-shadow: 2px 2px 4px #888888;
+	
+}
+
+span.toptitle {
+	font-size: 50px;
+
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+div.reserveimage {
+	opacity: 0.5;	
+}
+
+div.reserveaftertext {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
