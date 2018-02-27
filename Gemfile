@@ -75,3 +75,9 @@ gem 'braintree'
 gem 'kaminari'
 
 gem "letter_opener", :group => :development
+
+gem 'sidekiq'
+
+gem 'mails'
+
+gem 'jquery-turbolinks'
