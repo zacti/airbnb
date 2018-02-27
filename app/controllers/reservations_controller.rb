@@ -23,7 +23,8 @@ class ReservationsController < ApplicationController
   end
 
   def show
-      @listing =Listing.find(params[:listing_id,])
+
+      @listing = Listing.find(params[:listing_id])
   end
 
   	private
@@ -32,6 +33,6 @@ class ReservationsController < ApplicationController
       params.require(:reservation).permit(:startdate, :enddate, :guests)
     end
 
-    
+
 end
 
