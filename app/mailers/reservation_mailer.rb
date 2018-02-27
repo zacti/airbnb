@@ -7,6 +7,6 @@ class ReservationMailer < ApplicationMailer
 		@host = host
 		@url = 'http://localhost:3000'
 	 	# @reservation_id = reservation_id	
-		mail( to: @customer.email, subject: 'Welcome to My Awesome Site')
+		mail(to: @customer.email, subject: 'Welcome to My Awesome Site')
 	end
 end
