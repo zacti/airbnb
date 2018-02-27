@@ -81,3 +81,5 @@ gem 'sidekiq'
 gem 'mails'
 
 gem 'jquery-turbolinks'
+
+gem 'rails_12factor', group: :production
