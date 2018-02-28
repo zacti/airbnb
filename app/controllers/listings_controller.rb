@@ -1,8 +1,10 @@
 class ListingsController < ApplicationController
 	def index
 		@listall = Listing.order(:title).page params[:page]
-	
-
+		@listsearch = Listing.where(nil)
+		filtering_params(params).each do |key, value|
+			@listsearch = @listsearch.public_send(key, value) if value.present?
+		end
 	end
 
 	def create
@@ -45,5 +47,8 @@ class ListingsController < ApplicationController
       params.require(:listing).permit(:title, :description, :location, :image,:amenities => [])
     end
 
+    def filtering_params(params)
+    	params.slice(:title, :description, :location)
+    end
 
 end
