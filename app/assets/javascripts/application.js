@@ -18,5 +18,5 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require twitter/bootstrap
+//= require twitter/bootstrap-sprockets
 
