@@ -16,7 +16,7 @@
 <p>Start Date:<%= s.text_field :startdate, id:"start"%> </p>
 <p>End Date:<%= s.text_field :enddate, id:"end"%></p>
 <p>Guests:<%= s.select :guests, [1,2,3,4,5] %></p>
-  	<%= s.submitw "Book now!",class:"btn btn-warning" %>
+  	<%= s.submit "Book now!",class:"btn btn-warning" %>
   	<%= link_to "Go Back", root_path, class:"btn btn-danger"%>
 
 <% end %>
