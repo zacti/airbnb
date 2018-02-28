@@ -79,5 +79,3 @@ gem "letter_opener", :group => :development
 gem 'sidekiq'
 
 gem 'jquery-turbolinks'
-
-gem 'rails_12factor', group: :production
