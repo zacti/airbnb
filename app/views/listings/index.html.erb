@@ -42,8 +42,8 @@
 	</p>
 </div>
 	<div class="createbutton">	<%= link_to "Create", new_listing_path, class:"btn btn-primary btn-lg"%></div>
-	<%= form_tag listings_path, method: :get do %>
-	<%= text_field_tag :listing %>
+	<%= form_tag listings_path, method: :get, remote: :true do %>
+	<%= text_field_tag :title,params[:title] %>
 	<%= submit_tag 'Search' %>
 	<%end %>
 

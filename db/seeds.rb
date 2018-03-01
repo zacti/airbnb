@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ActiveRecord::Base.transaction do
+	100.times do
+  		Listing.create!(title: Faker::Address.city, user_id: rand(1..4), description: Faker::Book.title,location: Faker::Number.interger,image: File.open('app/assets/other/010-jupiter-residence-fava-design-group.jpg'))
+	end
+end

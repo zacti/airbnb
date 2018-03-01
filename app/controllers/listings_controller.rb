@@ -3,8 +3,13 @@ class ListingsController < ApplicationController
 		@listall = Listing.order(:title).page params[:page]
 		@listsearch = Listing.where(nil)
 		filtering_params(params).each do |key, value|
-			@listsearch = @listsearch.public_send(key, value) if value.present?
+			@listsearch = @listsearch.public_send(key, value) if value.present?	
 		end
+
+		respond_to do |format| 
+		format.html
+		format.js
+		end 
 	end
 
 	def create
