@@ -7,17 +7,12 @@ class Listing < ApplicationRecord
   paginates_per 6
   max_paginates_per 6
 
-  scope :title, -> (title) { where title: title }
-  scope :description, -> (description) { where description: description }
+  # scope :title, -> (title) { where title: title }
+  scope :description, -> (argument) { where description: argument }
   scope :location, -> (location) { where location: location }
-  # scope :starts_with, -> (location) { where("location like ?", "#{location}%")}
-# scope :title, ->(title) { where :title title}
-# scope :description, ->(title) { where :description title}
-# scope :location, ->(title) { where :location title}
 
-	def self.search_title(query)
-    where("title ILIKE :title", title: "%#{query}%").map do |record|
-      record.title
-    end
+	def self.title(query)
+    where("title ILIKE :title", title: "%#{query}%")
   end
+
 end

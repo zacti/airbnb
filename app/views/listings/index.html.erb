@@ -42,12 +42,16 @@
 	</p>
 </div>
 	<div class="createbutton">	<%= link_to "Create", new_listing_path, class:"btn btn-primary btn-lg"%></div>
-	<%= form_tag listings_path, remote: true do %>
+<div id="search">
+	<%= form_tag listings_path,method: :get, remote: true do %>
 	<%= text_field_tag :title,params[:title] %>
 	<%= submit_tag 'Search' %>
 	<%end%>
+</div>
+<div id="listingsearch">
+	<br>
+</div>
 
-<button type="button" onclick="loadDoc()">Change Content</button>
 	<div>
 
 	<%@listall.each do |listing| %>
@@ -89,7 +93,7 @@
 </div>
 </div>
 <footer>
-	    <%= paginate @listall %>
+	    <%= paginate @listorder%>
 </footer>
 </body>
 

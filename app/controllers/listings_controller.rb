@@ -1,14 +1,17 @@
 class ListingsController < ApplicationController
 	def index
-		@listall = Listing.order(:title).page params[:page]
+		@listall = Listing.all
+		@listorder = Listing.order(:title).page params[:page]
 		@listsearch = Listing.where(nil)
+		# @listsaerch.public_send(title, "Malaysia")
+		# @listearch.title("Mlaaysia")
 		filtering_params(params).each do |key, value|
 			@listsearch = @listsearch.public_send(key, value) if value.present?	
 		end
 
 		respond_to do |format| 
-		format.html
-		format.js
+			format.html
+			format.js
 		end 
 	end
 

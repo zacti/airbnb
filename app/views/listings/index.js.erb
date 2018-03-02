@@ -1,1 +1,6 @@
-console.log("hi")
+console.log("ka")
+$("#listingsearch").html("")
+<% @listsearch.each do |listing| %>
+	$("#listingsearch").append("<p><%= @listsearch %></p>")
+<% end %>
+

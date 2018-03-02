@@ -1,62 +1,66 @@
-// # Place all the behaviors and hooks related to the matching controller here.
-// # All this logic will automatically be available in application.js.
-// # You can use CoffeeScript in this file: http://coffeescript.org/
-var listing_input = document.getElementById("search")
-console.log("hi")
-if (listing_input){
-  listing_input.addEventListener("keyup", function(event){
-    autocomplete(event)
-  })
-}
+// // # Place all the behaviors and hooks related to the matching controller here.
+// // # All this logic will automatically be available in application.js.
+// // # You can use CoffeeScript in this file: http://coffeescript.org/
 
-window.globalXHR = new XMLHttpRequest()
+// document.addEventListener("DOMContentLoaded",function(){
+// var listing_input = document.getElementById("search")
+// console.log(listing_input)
+// if (listing_input){
+//   listing_input.addEventListener("keyup", function(event){
+//       autocomplete(event)
+//     })
+//   }
 
-function autocomplete(event) {
-  //retrieve input
-  var input = event.target
 
-  //get datalist element for results
-  var list = document.getElementById("list")
+// window.globalXHR = new XMLHttpRequest()
 
-  //set minimum num of chars
-  var min_chars = 0
+// function autocomplete(event) {
+//   //retrieve input
+//   var input = event.target
 
-  if (input.value.length > min_chars) {
-    //abort pending requests
-    //ensure that our XHR object is not working on any pending request before we tell it to do new work
-    window.globalXHR.abort()
+//   //get datalist element for results
+//   var list = document.getElementById("list")
 
-    // Callback to be applied once the XMLHttpRequest() internal state has been changed after
-    // sending a request
-    // We check to see whether the request is done and that the return status of the request is ok
-    window.globalXHR.onreadystatechange = function(){
-      if (this.readyState == 4 && this.status == 200) {
+//   //set minimum num of chars
+//   var min_chars = 0
 
-        //convert json response to an object
-        var response = JSON.parse(this.responseText)
+//   if (input.value.length > min_chars) {
+//     //abort pending requests
+//     //ensure that our XHR object is not working on any pending request before we tell it to do new work
+//     window.globalXHR.abort()
 
-        //clear previous results
-        list.innerHTML = ""
+//     // Callback to be applied once the XMLHttpRequest() internal state has been changed after
+//     // sending a request
+//     // We check to see whether the request is done and that the return status of the request is ok
+//     window.globalXHR.onreadystatechange = function(){
+//       if (this.readyState == 4 && this.status == 200) {
 
-        response.forEach(function(element){
-          //create new option element
-          var option = document.createElement("option")
-          option.value = element
+//         //convert json response to an object
+//         var response = JSON.parse(this.responseText)
 
-          //append option to list
-          list.appendChild(option)
-        })
-      }
-    }
+//         //clear previous results
+//         list.innerHTML = ""
 
-    // authentication is required whenever our client wishes to make a request to our server
-    // this is to prevent csrf attacks on our servers
-    // more info can be found at the link below
-    // https://www.checkmarx.com/2016/01/22/ultimate-guide-understanding-preventing-csrf/
-    var auth_token = document.querySelector("[name='csrf-token']").content
-    window.globalXHR.open("POST", "listings/search?query=" + input.value, true)
-    //allow js to make request to rails server
-    window.globalXHR.setRequestHeader("X-CSRF-TOKEN", auth_token)
-    window.globalXHR.send()
-  }
-}
+//         response.forEach(function(element){
+//           //create new option element
+//           var option = document.createElement("option")
+//           option.value = element
+
+//           //append option to list
+//           list.appendChild(option)
+//         })
+//       }
+//     }
+
+//     // authentication is required whenever our client wishes to make a request to our server
+//     // this is to prevent csrf attacks on our servers
+//     // more info can be found at the link below
+//     // https://www.checkmarx.com/2016/01/22/ultimate-guide-understanding-preventing-csrf/
+//     var auth_token = document.querySelector("[name='csrf-token']").content
+//     window.globalXHR.open("POST", "listings/search?query=" + input.value, true)
+//     //allow js to make request to rails server
+//     window.globalXHR.setRequestHeader("X-CSRF-TOKEN", auth_token)
+//     window.globalXHR.send()
+//   }
+// }
+// })
