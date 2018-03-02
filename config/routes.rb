@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'braintree/new'
   post 'braintree/checkout'
+  post 'listings/search'
   root "listings#index"
   resources :listings do
     resources :reservations

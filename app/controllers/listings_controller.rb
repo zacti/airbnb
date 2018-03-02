@@ -42,9 +42,12 @@ class ListingsController < ApplicationController
 	end
 
     def destroy
-    	Listing.delete(params[:id])
-    	redirect_to listings_path
+    	@listing = Listing.delete(params[:id])
+    	@number = params[:id]
+    	redirect_to root_path
     end
+
+
 
 	private
 

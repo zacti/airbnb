@@ -14,4 +14,10 @@ class Listing < ApplicationRecord
 # scope :title, ->(title) { where :title title}
 # scope :description, ->(title) { where :description title}
 # scope :location, ->(title) { where :location title}
+
+	def self.search_title(query)
+    where("title ILIKE :title", title: "%#{query}%").map do |record|
+      record.title
+    end
+  end
 end

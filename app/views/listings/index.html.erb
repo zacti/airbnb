@@ -42,22 +42,23 @@
 	</p>
 </div>
 	<div class="createbutton">	<%= link_to "Create", new_listing_path, class:"btn btn-primary btn-lg"%></div>
-	<%= form_tag listings_path, method: :get, remote: :true do %>
+	<%= form_tag listings_path, remote: true do %>
 	<%= text_field_tag :title,params[:title] %>
 	<%= submit_tag 'Search' %>
-	<%end %>
+	<%end%>
 
+<button type="button" onclick="loadDoc()">Change Content</button>
 	<div>
 
 	<%@listall.each do |listing| %>
 	<div id="listofall">
+	<div id="<%= listing.id %>" >
 		<div class="listimage">
 
 		<%= link_to listing do%>
 		
 		<%=image_tag listing.image.url.to_s,:size => "300x200" if listing.image %>
 
-		
 		<% end %>	
 
 		</div>
@@ -69,8 +70,9 @@
 		<div>
 		<%= link_to 'Reserve This Place', new_listing_reservation_path(listing),class:"btn btn-warning btn-lg btn-block"%>
 
-		<%= link_to 'Delete', listing_path(listing), method: :delete,data: { confirm: 'Press OK and get lost!' }, class:"btn btn-danger"%>
+		<%= link_to 'Delete', listing_path(listing),remote: true, method: :delete,data: { confirm: 'Press OK and get lost!' }, class:"btn btn-danger"%>
 		<%= link_to "Edit", edit_listing_path(listing) ,class:"btn btn-secondary"%><br>
+	</div>
 	</div>
 	</div>
 	<%end%>	
