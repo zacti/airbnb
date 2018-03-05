@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
 
 		respond_to do |format| 
 			format.html
-			format.js
+			format.js 
 		end 
 	end
 
@@ -49,6 +49,8 @@ class ListingsController < ApplicationController
     	@number = params[:id]
     	redirect_to root_path
     end
+
+
 
 
 

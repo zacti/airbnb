@@ -1,7 +1,3 @@
-// // # Place all the behaviors and hooks related to the matching controller here.
-// // # All this logic will automatically be available in application.js.
-// // # You can use CoffeeScript in this file: http://coffeescript.org/
-
 // document.addEventListener("DOMContentLoaded",function(){
 // var listing_input = document.getElementById("search")
 // console.log(listing_input)
@@ -19,7 +15,7 @@
 //   var input = event.target
 
 //   //get datalist element for results
-//   var list = document.getElementById("list")
+//   var list = document.getElementById("search")
 
 //   //set minimum num of chars
 //   var min_chars = 0
@@ -59,6 +55,7 @@
 //     var auth_token = document.querySelector("[name='csrf-token']").content
 //     window.globalXHR.open("POST", "listings/search?query=" + input.value, true)
 //     //allow js to make request to rails server
+//     window.globalXHR.setRequestHeader("Accept","application/json")
 //     window.globalXHR.setRequestHeader("X-CSRF-TOKEN", auth_token)
 //     window.globalXHR.send()
 //   }
