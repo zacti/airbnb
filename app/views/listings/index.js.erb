@@ -1,6 +1,4 @@
-console.log("ka")
-$("#listingsearch").html("")
-<% @listsearch.each do |listing| %>
-	$("#listingsearch").append("<p><%= @listsearch %></p>")
-<% end %>
+$("#alllist").html("");
+$("#listingsearch").html("");
+$('#listingsearch').append('<%= escape_javascript (render(partial: 'partial')) %>');
 

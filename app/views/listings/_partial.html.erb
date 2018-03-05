@@ -1,0 +1,26 @@
+<%@listsearch.each do |listing| %>
+	<div id="listofall">
+	<div id="<%= listing.id %>" >
+		<div class="listimage">
+
+		<%= link_to listing do%>
+		
+		<%=image_tag listing.image.url.to_s,:size => "300x200" if listing.image %>
+
+		<% end %>	
+
+		</div>
+		<h1><%=listing.title%><br></h1>
+		<%=listing.description%><br>
+		<%=listing.location%><br>
+		<%=listing.amenities%>
+		Listed by:<%= listing.user.email%>
+		<div>
+		<%= link_to 'Reserve This Place', new_listing_reservation_path(listing),class:"btn btn-warning btn-lg btn-block"%>
+
+		<%= link_to 'Delete', listing_path(listing),remote: true, method: :delete,data: { confirm: 'Press OK and get lost!' }, class:"btn btn-danger"%>
+		<%= link_to "Edit", edit_listing_path(listing) ,class:"btn btn-secondary"%><br>
+	</div>
+	</div>
+	</div>
+<%end%>	

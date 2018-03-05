@@ -6,7 +6,9 @@
 	<div id="topdescript">
 	<h1><span class="toptitle"><%=@listing.title%></span><br></h1>
 		<%=@listing.description%><br>
+		<div class="reserveimage">
       <%= image_tag @listing.image.url,:size => "600x540"%>
+  </div>
 	</div>
 
 <div class="datesubmit">
