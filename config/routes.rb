@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
 
-
   get 'braintree/new'
   post 'braintree/checkout'
   root "listings#index"
+  resources :users
   resources :listings do
     resources :reservations
   end

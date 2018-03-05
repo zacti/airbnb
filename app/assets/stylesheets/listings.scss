@@ -21,15 +21,12 @@ div#first {
 	text-align: center;
 }
 div.sign-in {
-	border-style: none;
+	margin: 10%;
 	text-align: center;
-	background-color: lightgrey;
-	color: white;
-    text-shadow: 2px 2px 4px #000000;
-	font-family: monospace;
-	background-size: auto;
-	box-shadow: 5px 5px;
-	padding: 15px 15px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border: 1px solid;
+	box-shadow: 5px 10px #888888;
 }
 
 div.newform {
@@ -100,7 +97,7 @@ div#listofall {
     height: 450px;
     padding: 30px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	margin: 3%;
+	margin: 4%;
 	float: left;	
 
 }
@@ -152,3 +149,17 @@ nav.pagination {
 	bottom: 0;
 }
 
+#search {
+	margin-right: 0;
+}
+
+div#airbnb {
+	font-size: 50px;
+	color:  #ff5a5e;
+	font-family: Arial;
+	font-weight: 700;margin-left: 4%
+}
+
+div#airbnb img {
+	float: left;
+}

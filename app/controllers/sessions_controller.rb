@@ -21,4 +21,7 @@ def create_from_omniauth
   sign_in(user)
   redirect_to @next, :notice => @notice
 end
+
+  def show
+    end
 end

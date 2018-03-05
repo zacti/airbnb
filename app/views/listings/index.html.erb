@@ -35,13 +35,13 @@
 
 <% if signed_in? -%>
 	<div id="first">
-	<h1 class="listingindex">Listings</h1>
+	<h1 class="listingindex">Become Host</h1>
 	<p>
 	Discover entire homes and private rooms perfect for any trip.
 
 	</p>
 </div>
-	<div class="createbutton">	<%= link_to "Create", new_listing_path, class:"btn btn-primary btn-lg"%></div>
+	<div class="createbutton">	<%= link_to "Create", new_listing_path, class:"btn btn-outline-primary btn-lg"%></div>
 <div id="search">
 	<%= form_tag listings_path,method: :get, remote: true do %>
 	<%= text_field_tag :title,params[:title] %>
@@ -57,18 +57,16 @@
 	<%= render 'partial' %>
     <% else %>
     <div id="signinbutt">
-          <%= link_to t(".sign_in"), sign_in_path %>
       </div>
 
     <% end -%>
-
-
-
-    
 </div>
 </div>
-<footer>
-	    <%= paginate @listorder%>
-</footer>
+	<div id="airbnb">
+	Social<br>
+	<%= link_to users_path do %><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/New_Logo_Gmail.svg/2000px-New_Logo_Gmail.svg.png" width="150" height="100">
+	<% end %>
+</div>
+
 </body>
 
